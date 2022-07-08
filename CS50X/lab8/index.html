@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function checkans1(event) {
+                var trigger = event.srcElement;
+                if (trigger.innerHTML == "Computer Science")
+                {
+                    trigger.style.backgroundColor = "green";
+                    answer1.innerHTML = "Correct";
+                }
+                else
+                {
+                    trigger.style.backgroundColor = "red";
+                    answer1.innerHTML = "Incorrect";
+                }
+            }
+            function freeresponse() {
+                var answer = document.querySelector("#x");
+                if (answer.value == "Parabola" || answer.value == "parabola")
+                {
+                    answer.style.backgroundColor = "green";
+                    answer2.innerHTML = "Correct";
+                }
+                else {
+                    answer.style.backgroundColor = "red";
+                    answer2.innerHTML = "Incorrect";
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the major that can blow up the student mind yet provide a rewarding experience?</h3>
+                <button onclick = "checkans1(event);">Engineering</button>
+                <button onclick = "checkans1(event);">Medicine</button>
+                <button onclick = "checkans1(event);" id = "c">Computer Science</button>
+                <button onclick = "checkans1(event);">Business Administration</button>
+                <button onclick = "checkans1(event);">Education</button>
+                <p id = "answer1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                 <!--TODO: Add free response question here-->
+                <h3>What type of graph does a quadratic function give?</h3>
+                <form onsubmit = "freeresponse(); return false;">
+                    <input id = "x" autocomplete="off"  placeholder="Type your answer here" type = "text">
+                    <button>Check Answer</button>
+                </form>
+                <p id = answer2></p>
+            </div>
+
+        </div>
+    </body>
+</html>

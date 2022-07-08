@@ -1,0 +1,12 @@
+sort1 uses: bubble sort
+
+How do you know?: It takes the largest amount of time to sort for random and reversed cases. As for sorted cases (which is the best-senario/lower bound), it turns out to take less time and therefore it is the bubble sort.
+Selection and merge sorts are not possible as they have the same number of steps and running-time for both lower and upper bounds.
+
+sort2 uses: merge sort
+
+How do you know?: It takes the lowest amount of time to sort for random and reversed cases. For all types of cases (random, reversed and sorted), the running time is similar which also indicates the merge sort(n log n).
+
+sort3 uses: selection sort
+
+How do you know?: It takes similar running time for all types of cases (random, reversed and sorted) which narrows down the choice to merge and selection sorts. As sort 3 takes longer, it is the selection sort.
