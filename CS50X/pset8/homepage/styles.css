@@ -1,0 +1,168 @@
+.navbar ul li a:hover{
+   color: black;
+   box-shadow: 0 0 10px white;
+}
+
+
+#home{
+   display: flex;
+   flex-direction: column;
+   background-color: rgba(0,0,0,0.5);
+   justify-content: center;
+   align-items: center;
+   color: white;
+}
+#home::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   background: url('Tanjiro.jpg') no-repeat center center/cover;
+   height: 100%;
+   width: 100%;
+   z-index: -1;
+   opacity: .8;
+}
+
+.main{
+   display: flex;
+   flex-direction: column;
+   border: 1px;
+   align-items: center;
+   position: absolute;
+   top: 30%;
+   right: 2%;
+}
+
+.headings{
+   font-family: century;
+   font-size: 3rem;
+   text-align: center;
+   margin: 40px 0px;
+}
+
+.about{
+   display: grid;
+   grid-template-columns: repeat(2, 2fr);
+   align-items: center;
+   grid-gap: 2rem;
+}
+
+.about-img img{
+   max-width: 100%;
+   width: 500px;
+   height: auto;
+   border-radius: 10px;
+}
+
+.about-text h2{
+   font-size: 60px;
+   margin-bottom: 20px;
+}
+
+.about-text h5{
+   font-size: 30px;
+   margin-bottom: 25px;
+   Letter-spacing: 2px;
+}
+
+.about-text p{
+   Letter-spacing: 1px;
+   line-height: 28px;
+   max-width: 590px;
+   font-size: 18px;
+   margin-bottom: 45px;
+}
+
+.btn{
+   display: inline-block;
+   background: black;
+   color: white;
+   border: 2px solid transparent;
+   font-weight: 600;
+   padding: 13px 30px;
+   border-radius: 30px;
+   transition: ease .35s;
+}
+
+.btn:hover{
+   transform: transLateY(-8px);
+   border: 2px;
+   background: green;
+   color: white;
+}
+
+.center{
+   text-align: center;
+}
+
+.center h2{
+   font-size: 60px;
+   margin-bottom: 15px;
+}
+
+.center p{
+   Letter-spacing: 1px;
+   line-height: 28px;
+   font-size: 18px;
+}
+
+.hobby-content{
+   color: white;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(370px, auto));
+   grid-gap: 2rem;
+   align-items: center;
+   margin-top: 4.5rem;
+}
+
+.row{
+   display: flex;
+   background: black;
+   padding: 55px 30px;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: all .35s;
+}
+
+.row i{
+   margin-bottom: 20px;
+   font-size: 2.7rem;
+}
+.row h3{
+   font-weight: 700;
+   margin-bottom: 15px;
+}
+
+.row:hover{
+   transform: transLateY(-8px);
+}
+
+.row1{
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   box-sizing: border-box;
+}
+
+#edu{
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+}
+
+.box{
+   display: flex;
+   flex-direction: column;
+   width: 350px;
+   height: 450px;
+   border: 1px solid black;
+   margin: 10px;
+   align-items: justify;
+   padding: 10px;
+   border-radius: 15px;
+}
+
+.box:hover{
+   transform: transLateY(-8px);
+}

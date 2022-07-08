@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/myaccount" method="post">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h5 style="text-align:right">Change username:</h5>
+          </div>
+          <div style="text-align:left" class="col">
+            <input type="text" name="username" autocomplete="off" placeholder=" type your username" >
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-6">
+            <h5 style="text-align:right">Change Password:</h5>
+          </div>
+          <div style="text-align:left" class="col">
+            <input type="password" name="originalpassword" autocomplete="off" placeholder=" type original password">
+            <br>
+            <input type="password" name="newpassword" autocomplete="off" placeholder=" type new password">
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-6">
+            <h5 style="text-align:right">Add cash to your account:</h5>
+          </div>
+          <div style="text-align:left" class="col">
+            <input type="number" name="cash" autocomplete="off" placeholder=" type the amount" min="50">
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <button class="btn btn-primary" type="submit">Apply Changes</button>
+
+</form>
+{% endblock %}

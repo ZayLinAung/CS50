@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Account
+{% endblock %}
+
+{% block main %}
+    <div style= "background-color: #40E0D0">
+        <h2 style="text-align: center">Profile</h3>
+    </div>
+    <br><br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <img id="image" src="/static/blank-profile-picture-973460_1280.jpg" style="width:200px;height:200px;" class="rounded float-start" alt="Profile Picture">
+        </div>
+        <div class="col-9">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th scope="row">Username</th>
+                  <td>{{profile[0]["username"]}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Current Cash</th>
+                  <td>{{profile[0]["cash"] | usd}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Owned Stocks</th>
+                  <td>
+                    {%for dic in stocks%}
+                      {%for symbols in dic%}
+                        {{dic[symbols]}},
+                      {%endfor%}
+                    {%endfor%}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/edit">
+        <input class="btn btn-primary" type="submit" value="Edit Profile">
+        <input class="btn btn-primary" type="submit" style="background-color: red" formaction = "/deleteacc" value="Delete Account">
+{% endblock %}

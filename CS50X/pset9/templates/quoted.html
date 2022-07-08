@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                {% for stock in quote %}
+                    <th scope="col">{{stock}}</th>
+                {% endfor%}
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+            {% for stock in quote %}
+                {% if stock == "price"%}
+                    <td>{{quote[stock] | usd}}</td>
+
+                {% else %}
+                    <td>{{quote[stock]}}</td>
+                {% endif %}
+            {% endfor%}
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
