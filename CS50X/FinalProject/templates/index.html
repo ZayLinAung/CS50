@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    EduPlatform
+{% endblock %}
+
+{% block main %}
+Hello World
+    {% for dic in data %}
+        {% for post in dic%}
+            {{dic[post]}}
+        {% endfor %}
+    {%endfor%}
+{% endblock %}
