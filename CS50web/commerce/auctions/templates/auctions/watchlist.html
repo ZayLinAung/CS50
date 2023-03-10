@@ -1,0 +1,55 @@
+{% extends "auctions/layout.html" %}
+
+<link href="static/auctions/style.css" rel="stylesheet">
+
+
+
+{% block body %}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <style>
+        .section{
+            display: grid;
+            grid-template-columns: 600px auto;
+            border: 3px solid black;
+            height: auto;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        img{
+            width: 400px;
+            height: auto;
+        }
+
+    </style>
+
+    <h2>My Watchlist</h2>
+
+        {% if myWatchlist.count == 0 %}
+            There is no listing yet in watchlist.
+        {% else %}
+            {% for auction in myWatchlist %}
+                <div class="section">
+                    <img src={{auction.auction.image}} alt="Image">
+                    <div>
+                        <a href="/listingPage/{{auction.auction.id}}"><h3><i>{{auction.auction.title}}</i></h3></a>
+                        <strong>
+                            Price: $ {{auction.auction.startbid}} <br>
+                            Category: {{auction.auction.category}}
+                        </strong>
+                        <hr>
+                        <h6>About this item:</h6>
+                        <br>
+                        <p>{{auction.auction.description}}</p>
+                        <hr>
+                        Posted: {{auction.auction.time}}
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+
+{% endblock %}
