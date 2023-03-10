@@ -1,0 +1,8 @@
+textarea {
+    min-height: 400px;
+}
+.orders-render span{
+  display:inline-block;
+  width: 360px;
+}
+
