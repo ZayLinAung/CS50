@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Page Already Exists
+{% endblock %}
+
+{% block body %}
+    <h1>Page Already Exists</h1>
+
+    Sorry, {{title}} already exists in entry list.
+    <br><br>
+
+    <form action="{% url 'newpage' %}">
+        <input type="submit" value="Create again!" />
+    </form>
+
+{% endblock %}
