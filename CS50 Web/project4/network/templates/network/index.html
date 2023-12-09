@@ -1,0 +1,36 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+    <div class = "section">
+        <h5>New Post</h5>
+        <br>
+        <form action = "{% url 'newPost'%}" method="POST">
+            {% csrf_token %}
+            <textarea autocomplete = "off" class="form-control" style = "height: 100px;" name="content" placeholder="Type your post" required></textarea><br>
+            <input class="btn btn-primary" type="submit" value="Post">
+        </form>
+    </div>
+{% endif %}
+
+<input type="hidden" id="login" value={{user.is_authenticated}}>
+<input type="hidden" id="logInUser" value={{request.user.username}}>
+
+<div id = 'posts' >
+</div>
+
+
+<div>
+    <button id = 'previous' style="padding: 5px; margin: 10px;">Previous</button>
+    <button style="padding: 5px; margin: 10px; float: right;" id = 'next'>Next</button>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/script.js' %}"></script>
+{% endblock %}

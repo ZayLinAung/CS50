@@ -1,0 +1,58 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<style>
+    .grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-gap: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+}
+
+.section{
+    display: grid;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: auto;
+    padding: 25px;
+    margin: 10px;
+}
+
+button{
+    cursor: pointer;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 70px;
+    color: #3498db;
+
+}
+</style>
+
+<div id = 'posts' >
+
+</div>
+
+<input type="hidden" id="login" value={{user.is_authenticated}}>
+<input type="hidden" id="logInUser" value={{request.user.username}}>
+
+<div>
+    <button id = 'previous' style="padding: 5px; margin: 10px;">Previous</button>
+    <button style="padding: 5px; margin: 10px; float: right;" id = 'next'>Next</button>
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/script.js' %}"></script>
+{% endblock %}
+
+

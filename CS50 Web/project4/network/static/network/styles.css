@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-gap: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+}
+
+.section{
+    display: grid;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: auto;
+    padding: 25px;
+    margin: 10px;
+}
+
+button{
+    cursor: pointer;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 70px;
+    color: #3498db;
+}
+
