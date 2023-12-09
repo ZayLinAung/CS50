@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="{% static 'profile.css' %}" rel="stylesheet" />
+    <div class="profile-contact">
+        <div class="profile-container09">
+        <div class="profile-form">
+            <h2 class="profile-text18 HeadingOne"><span>Log In</span></h2>
+            <form class="profile-form1" action = "{% url 'login' %}" method = "post">
+                {% csrf_token %}
+            <label class="profile-text21 Label">Username</label>
+            <input
+                type="text"
+                placeholder="Type your username"
+                name = "username"
+                class="profile-textinput Small input"
+            />
+            <label class="profile-text22 Label">Password</label>
+            <input
+                type="password"
+                placeholder="Type your password"
+                name = "password"
+                class="profile-textinput1 Small input"
+            />
+            <br>
+            <div class="profile-container10">
+                <div class="profile-container11">
+                    <div class="primary-blue-button-container">
+                    <button
+                        class="primary-blue-button-button button ButtonSmall"
+                    >
+                        <span>Log In</span>
+                    </button>
+                    </div>
+                </div>
+                </div>
+            </form>
+            {% if message %}
+                <div>{{ message }}</div>
+            {% endif %}
+        </div>
+        <div class="profile-info">
+        </div>
+        </div>
+    </div>
+    Don't have an account? <a href="{% url 'register' %}"><strong>Register here</strong></a>
+
+{% endblock %}

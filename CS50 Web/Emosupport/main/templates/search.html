@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="{% static 'profile.css' %}" rel="stylesheet" />
+    <div class="profile-contact">
+        <div class="profile-container09">
+        <div class="profile-form">
+            <h2 class="profile-text18 HeadingOne"><span>Search</span></h2>
+            <form class="profile-form1" action = "{% url 'gptSearch' %}" method = "post">
+                {% csrf_token %}
+            <label class="profile-text21 Label">Current Feeling</label>
+            <input
+                type="text"
+                placeholder="Feeling"
+                name = "feeling"
+                class="profile-textinput Small input"
+                required
+            />
+            <label class="profile-text21 Label">Genre</label>
+            <input
+                type="text"
+                placeholder="Genre"
+                name = "genre"
+                class="profile-textinput Small input"
+            />
+            <label class="profile-text21 Label">Artist</label>
+            <input
+                type="text"
+                placeholder="Atist"
+                name = "artist"
+                class="profile-textinput Small input"
+            />
+            <label class="profile-text22 Label">Description</label>
+            <textarea
+                rows="8"
+                placeholder="I want to say that..."
+                name = "description"
+                class="profile-textarea textarea Small"
+            ></textarea>
+            <br>
+            <div class="profile-container10">
+                <div class="profile-container11">
+                    <div class="primary-blue-button-container">
+                    <button
+                        class="primary-blue-button-button button ButtonSmall"
+                    >
+                        <span>Generate Spotify</span>
+                    </button>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+        <div class="profile-info">
+        </div>
+        </div>
+    </div>
+
+{% endblock %}

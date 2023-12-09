@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% load static %} {% block body %}
+<link rel="stylesheet" href="{% static 'style.css' %}" />
+<div>
+  <link href="{% static 'profile.css' %}" rel="stylesheet" />
+
+  <div class="home-container">
+    <section class="home-features">
+      <!-- <div class="feature-card-container">
+        <a href="https://www.google.com/">
+          <button class="primary-youtube-button-button button ButtonSmall">
+          </button>
+        </a>
+      </div> -->
+      <div class="feature-card-container">
+        <a href="{% url 'spotifyLogin' %}">
+          <button class="primary-spotify-button-button button ButtonSmall">
+          </button>
+        </a>
+      </div>
+      <!-- <div class="feature-card-container">
+        <a href="https://www.google.com/">
+          <button class="primary-spotify-button-button button ButtonSmall">
+          </button>
+        </a>
+      </div> -->
+    </section>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+
+    {% endblock %}
+  </div>
+</div>

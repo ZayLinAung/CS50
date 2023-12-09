@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block body %}
+    <div class="home-hero">
+      <div class="home-container01">
+        <div class="home-card">
+          <h1 class="home-text HeadingOne">MoodSync AI</h1>
+          <h3 class="home-text01 HeadingOne">Create your own freedom</h3>
+          <span class="home-text02 Lead">
+            <span>
+              Customize your own playlist and build your own peace by prompting how you feel!
+            </span>
+          </span>
+          <div class="home-container02">
+            <div class="home-container03">
+              <div class="primary-pink-button-container">
+                <a href="{% url 'chooseMedia' %}">
+                  <button
+                  class="primary-pink-button-button button ButtonSmall">
+                  <span>Search</span>
+                </button>
+                </a>
+                
+              </div>
+            </div>
+          </div>
+          <div class="home-container04">
+            <img
+              alt="image"
+              src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/openai-icon.png"
+              class="home-image"
+            />
+            <img
+            alt="image"
+            src="{% static 'public/spotify.png' %}"
+            class="home-image"
+          />
+          </div>
+        </div>
+      </div>
+    </div>
+    <img alt="image" src="{% static 'public/Spotify.gif' %}" class="home-image04" />
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+
+{% endblock %}
+

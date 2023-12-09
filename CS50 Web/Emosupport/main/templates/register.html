@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block body%}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link href="{% static 'profile.css' %}" rel="stylesheet" />
+    <div class="profile-contact">
+        <div class="profile-container09">
+        <div class="profile-form">
+            <h2 class="profile-text18 HeadingOne"><span>Register</span></h2>
+            <form class="profile-form1" action = "{% url 'register'%}" method = "post">
+                {% csrf_token %}
+                <label class="profile-text21 Label">Username</label>
+                <input
+                    type="text"
+                    placeholder="Type your Username"
+                    name = 'username'
+                    class="profile-textinput Small input"
+                    required
+                />
+                <label class="profile-text22 Label">Email</label>
+                <input
+                    type="text"
+                    placeholder="Type your email"
+                    name = 'email'
+                    class="profile-textinput1 Small input"
+                    required
+                />
+                <label class="profile-text23 Label">Password</label>
+                <input
+                    type="password"
+                    placeholder="Password"
+                    name = 'password'
+                    class="profile-textinput Small input"
+                    required
+                />
+                <label class="profile-text23 Label">Confirm Password</label>
+                <input
+                    type="password"
+                    placeholder="Type your password again"
+                    name = 'confirmation'
+                    class="profile-textinput Small input"
+                    required
+                />
+                <div class="profile-container10">
+                    <div class="profile-container11">
+                        <div class="primary-blue-button-container">
+                        <button class="primary-blue-button-button button ButtonSmall">
+                            <span>Register</span>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block body %}
+
+   
+    <div class="home-container">
+        <section class="home-features">
+                <div id = 'container'></div>
+                
+        </section>
+    </div>
+
+    <div id = 'musicPlayer' style = "width: 90%; bottom: 0; position: fixed;">
+    </div>
+
+    <script>
+        (function () {
+            window.songData = JSON.parse("{{data|escapejs}}");
+        }());
+    </script>
+    
+    <script type = "text/babel" src = "{% static 'script.js' %}">
+  
+    </script>
+
+{% endblock %}
+
