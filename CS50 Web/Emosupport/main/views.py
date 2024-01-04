@@ -14,8 +14,8 @@ import json, requests, datetime
 
 from .models import *
 
-CLIENT_ID = '615aab0b7e6d47f98f43fba9b9748332'
-CLIENT_SECRET = '98bcb10235a6484a8fa6dad37e4aea4a'
+CLIENT_ID = 'xxx'
+CLIENT_SECRET = 'xxx'
 REDIRECT_URI = 'http://127.0.0.1:8000/callback'
 AUTH_URL = 'https://accounts.spotify.com/authorize'
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
