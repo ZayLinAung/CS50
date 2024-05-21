@@ -1,0 +1,39 @@
+{% extends "layout1.html" %}
+
+{% block title %}
+    Answer Post
+{% endblock %}
+
+{% block main %}
+
+    <div style = "padding: 20px; border-style: double; border-color: #CDFCF6">
+        <div><strong>{{orgpost[0]["username"]}}</strong> </div>
+        <span>Posted: {{orgpost[0]["timestramp"]}}</span>
+        <hr>
+        <br>
+        <h4><i>Category: {{orgpost[0]["title"]}}</i></h4>
+        <h3>
+        <span>Question:</span>
+        </h3>
+        <h4>{{orgpost[0]["content"]}}</h4>
+        <br>
+        <hr>
+    </div>
+        {% for reply in replies%}
+        <div style = "margin-left: 100px; padding: 20px; border-style: double; border-color: #CDFCF6">
+            <div><strong>{{reply["username"]}}</strong> </div>
+            <span>Posted: {{reply["timestramp"]}}</span>
+            <hr>
+            <br>
+            <h4>{{reply["content"]}}</h4>
+            <br>
+            <hr>
+        </div>
+        {% endfor %}
+        <div style = "margin-left: 100px; padding: 20px;">
+            <form action="/">
+                <input style = "background-color: black; color: white;"type = "submit" value = "Go Home Page">
+            </form>
+        </div>
+
+{% endblock %}

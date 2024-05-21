@@ -1,0 +1,33 @@
+{% extends "layout1.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    {% for dic in data %}
+
+    <div style = "padding: 20px; border-style: double; border-color: #CDFCF6">
+      <div><strong>{{dic["username"]}}</strong> </div>
+      <span>Posted: {{dic["timestramp"]}}</span>
+      <hr>
+      <br>
+      <h4><i>Category: {{dic["title"]}}</i></h4>
+      <br>
+      <h3>
+        <span>Question:</span>
+      </h3>
+      <h4>{{dic["content"]}}</h4>
+      <br>
+      <hr>
+      <form action = "/reply" method = "post">
+        <input type = "hidden" name="id" value = {{dic["id"]}}>
+        <input style = "background-color: black; color: white;"type = "submit" value = "Answer">
+      </form>
+
+    </div>
+      {% endfor %}
+
+
+{% endblock %}
